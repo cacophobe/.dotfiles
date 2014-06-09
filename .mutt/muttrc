@@ -1,0 +1,18 @@
+# General Settings ----------------------------------
+set mbox_type = Maildir
+
+# Paths ----------------------------------------------
+set folder = ~/.mutt/mail
+set alias_file = ~/.mutt/alias
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path = ~/.mutt/mailcap
+set tmpdir = ~/.mutt/temp
+set signature = ~/.mutt/signature
+
+# Multiple Accounts --------------------------------
+source '~/.mutt/account.gmail'
+folder-hook gmail.com 'source ~/.mutt/account.gmail'
+folder-hook comic.com 'source ~/.mutt/account.comic'
+folder-hook yahoo.com 'source ~/.mutt/account.yahoo'
