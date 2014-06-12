@@ -1,20 +1,21 @@
-set my_user = `security find-generic-password -aw mutt-yahoo-user`
-set my_pass = `security find-generic-password -aw mutt-yahoo-pass`
+set my_user="`security find-generic-password -wa mutt-yahoo-user`"
+set my_pass="`security find-generic-password -wa mutt-yahoo-pass`"
 
-set imap_user = $my_user
-set imap_pass = $my_pass
-set folder = imaps://$my_user@imap.mail.yahoo.com/
-set spoolfile = +INBOX
-set postponed = +Drafts
-set record = +Sent
+set imap_user=$my_user
+set imap_pass=$my_pass
+set folder=imaps://$my_user:$my_pass@imap.mail.yahoo.com/
+set spoolfile=+INBOX
+set postponed=+Drafts
+set record=+Sent
+set trash=+Trash
 
-set smtp_url = smtps://$my_user:$my_pass@smtp.mail.yahoo.com
-set realname = 'Sans Comic'
-set from = $my_user
-set hostname = "yahoo.com"
-set signature = “Sans Comic”
+set smtp_url=smtps://$my_user:$my_pass@smtp.mail.yahoo.com
+set realname='Sans Comic'
+set from=$my_user
+set hostname="yahoo.com"
+#set signature=“Sans Comic”
 
-set ssl_force_tls = yes
-unset ssl_starttls
+#set ssl_force_tls=yes
+#unset ssl_starttls
 
-account-hook $folder "set imap_user = $my_user imap_pass = $my_pass"
+account-hook $folder "set imap_user=$my_user imap_pass=$my_pass"

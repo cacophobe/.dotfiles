@@ -1,20 +1,22 @@
-set my_user = `security find-generic-password -aw mutt-comic-user`
-set my_pass = `security find-generic-password -aw mutt-comic-pass`
+set my_user="`security find-generic-password -wa mutt-comic-user`"
+set my_pass="`security find-generic-password -wa mutt-comic-pass`"
 
-set imap_user = $my_user
-set imap_pass = $my_pass
-set folder = imaps://$my_user@imap.mail.com/
-set spoolfile = +INBOX
-set postponed = +Drafts
-set record = +Sent
+set imap_user=$my_user
+set imap_pass=$my_pass
+set folder=imaps://$my_user:$my_pass@imap.mail.com/
+set spoolfile=+INBOX
+set postponed=+Drafts
+set record=+Sent
+set trash=+Trash
 
-set smtp_url = smtps://$my_user:$my_pass@smtp.mail.com
-set realname = "pallab"
-set from = $my_user
-set hostname = "gmail.com"
-set signature = "palLABS"
+set smtp_url=smtps://$my_user:$my_pass@smtp.mail.com
+set realname="Pallab Chakraborty"
+set from=$my_user
+set hostname="mail.com"
+#set signature="palLABS"
 
-set ssl_force_tls = yes
-unset ssl_starttls
+#set imap_authenticators="login"
+#set ssl_force_tls=yes
+#unset ssl_starttls
 
-account-hook $folder "set imap_user = $my_user imap_pass = $my_pass"
+account-hook $folder "set imap_user=$my_user imap_pass=$my_pass"
