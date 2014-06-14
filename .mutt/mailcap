@@ -1,5 +1,5 @@
-text/html; w3m -v -I %{charset} -T text/html -dump; copiousoutput
-image/*; qlmanage -p 2>/dev/null %s; copiousoutput
-audio/*; qlmanage -p 2>/dev/null %s; copiousoutput
-video/*; qlmanage -p 2>/dev/null %s; copiousoutput
-application/*; qlmanage -p 2>/dev/null %s; copiousoutput
+text/html; w3m -v -I %{charset} -T text/html -dump; copiousoutput; needsterminal;
+image/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
+audio/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
+video/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
+application/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
