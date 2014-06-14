@@ -10,29 +10,62 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path = ~/.mutt/mailcap
 set tmpdir = ~/.mutt/temp
 set signature = ~/.mutt/signature
+auto_view text/html
+# alternative_order text/plain text/html
 
-#set imap_check_subscribed
+# IMAP SETTINGS --------------------------------------------------------
+set imap_check_subscribed
 unset imap_passive
+unset imap_idle
+#set connect_timeout = 90
+#set imap_keepalive = 600
+#set mail_check = 500
 
-set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
+# INDEX VIEW OPTIONS ----------------------------------------------------
+set date_format = "%d_%b_%y"
+set index_format = "%Z %-4c  %D   %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
 set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
 # Multiple Accounts --------------------------------
-source '~/.mutt/account.comic'
+source '~/.mutt/account.gmail'
 folder-hook 'imap.gmail.com' 'source ~/.mutt/account.gmail'
 folder-hook 'imap.mail.com' 'source ~/.mutt/account.comic'
 folder-hook 'imap.mail.yahoo.com' 'source ~/.mutt/account.yahoo'
 
-macro index gy '<sync-mailbox><enter-command>source ~/.mutt/account.yahoo<enter><change-folder>!<enter>'
-macro index gc '<sync-mailbox><enter-command>source ~/.mutt/account.comic<enter><change-folder>!<enter>'
-macro index gg '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
-macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+macro index,pager gy '<sync-mailbox><enter-command>source ~/.mutt/account.yahoo<enter><change-folder>!<enter>'
+macro index,pager gc '<sync-mailbox><enter-command>source ~/.mutt/account.comic<enter><change-folder>!<enter>'
+macro index,pager gg '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+macro index,pager 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
-source '~/.mutt/solarized-d16.muttrc'
+source '~/.mutt/solarized-d16.colors'
+
+
+# GOOBOOK -------------    
+# If you want to use goobook from mutt.
+# Set in your .muttrc file
+set query_command="goobook query '%s'"
+
+# To query address book. (Normally bound to "Q" key.)
+# If you want to be able to use <tab> to complete email addresses instead of Ctrl-t add this:
+bind editor <Tab> complete-query
+
+# To add email addresses (with "a" key normally bound to create-alias command)::
+# If you want to add an email's sender to Contacts, press a while it's selected in the index or pager.
+macro index,pager a "<pipe-message>goobook add<return>" "add the sender address to Google contacts"
+
+set sleep_time = 0
+
+# Message Display Options
+set smart_wrap = yes        # Wrap at word boundaries if possible
+# set pager_index_lines = 16   # Show a few lines from the index above the msg
+set pager_stop = yes        # PgDown at bottom does not move to next message
+set markers = no            # Don't add "+" on wrapped lines (hard to copy)
+
