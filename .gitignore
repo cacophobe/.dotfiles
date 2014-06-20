@@ -1,3 +1,4 @@
+.DS_Store
 .mutt/cache/**
 .config/fish/fish_history
 .config/fish/fishd.*

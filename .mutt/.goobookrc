@@ -1,0 +1,5 @@
+[DEFAULT]
+email: palLABSinc@gmail.com
+passwordeval: security find-generic-password -wa mutt-gmail-pass
+cache_filename: ~/.cache/goobook/goobook_cache
+cache_expiry_hours: 24

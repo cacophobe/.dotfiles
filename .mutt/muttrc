@@ -41,6 +41,9 @@ folder-hook 'imap.gmail.com' 'source ~/.mutt/account.gmail'
 folder-hook 'imap.mail.com' 'source ~/.mutt/account.comic'
 folder-hook 'imap.mail.yahoo.com' 'source ~/.mutt/account.yahoo'
 
+# Custom Key Bindings ----------------------------------------------
+
+bind index,pager G imap-fetch-mail
 macro index,pager gy '<sync-mailbox><enter-command>source ~/.mutt/account.yahoo<enter><change-folder>!<enter>'
 macro index,pager gc '<sync-mailbox><enter-command>source ~/.mutt/account.comic<enter><change-folder>!<enter>'
 macro index,pager gg '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
