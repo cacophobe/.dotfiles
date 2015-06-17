@@ -1,1 +1,0 @@
-../bundle/base16-vim/colors/PaperColor.vim
