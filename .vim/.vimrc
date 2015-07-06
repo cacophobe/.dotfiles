@@ -1,26 +1,23 @@
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-Plug 'bling/vim-airline'
-Plug 'vimoutliner/vimoutliner'
-Plug 'digitaltoad/vim-jade'
-Plug 'wavded/vim-stylus'
-Plug 'jonathanfilip/vim-lucius'
-
-" plugin: pathogen runtime config
-" --------------------------------
-    "runtime bundle/vim-pathogen/autoload/pathogen.vim
-    "call pathogen#infect()
-
 " remove vi compatiblity
     set nocompatible
 " syntax highlighting
     syntax on
 " filetype detection and settings
     filetype plugin indent on
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'bling/vim-airline'
+Plug 'vimoutliner/vimoutliner'
+Plug 'digitaltoad/vim-jade'
+Plug 'wavded/vim-stylus'
+Plug 'jonathanfilip/vim-lucius'
+
+call plug#end()
+
 " vim color schemes
-    colorscheme lucius
-    LuciusWhite
+    "colorscheme lucius
+    "LuciusLight
     "set background=dark
 " let the backspace key work 'normally'
     set backspace=indent,eol,start
