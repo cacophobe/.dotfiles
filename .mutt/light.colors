@@ -1,3 +1,5 @@
+# http://permalink.gmane.org/gmane.mail.mutt.user/34779
+
 # Default color definitions - assumes light background
 color normal black default
 color quoted color65 default
