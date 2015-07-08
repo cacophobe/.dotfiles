@@ -2,6 +2,7 @@
 set mbox_type = Maildir
 unset wait_key
 set timeout = 0
+set editor="vim -f -c 'set spell spelllang=en'"
 # Paths ----------------------------------------------
 set folder = ~/.mutt/mail
 set alias_file = ~/.mutt/alias
@@ -40,6 +41,8 @@ source '~/.mutt/account.gmail'
 folder-hook 'imap.gmail.com' 'source ~/.mutt/account.gmail'
 folder-hook 'imap.mail.com' 'source ~/.mutt/account.comic'
 folder-hook 'imap.mail.yahoo.com' 'source ~/.mutt/account.yahoo'
+folder-hook 'imap_mail.outlook.com' 'source ~/.mutt/account.outlook'
+folder-hook 'imap.yandex.com' 'source ~/.mutt/account.yandex'
 
 # Custom Key Bindings ----------------------------------------------
 
@@ -47,10 +50,12 @@ bind index,pager G imap-fetch-mail
 macro index,pager gy '<sync-mailbox><enter-command>source ~/.mutt/account.yahoo<enter><change-folder>!<enter>'
 macro index,pager gc '<sync-mailbox><enter-command>source ~/.mutt/account.comic<enter><change-folder>!<enter>'
 macro index,pager gg '<sync-mailbox><enter-command>source ~/.mutt/account.gmail<enter><change-folder>!<enter>'
+macro index,pager go '<sync-mailbox><enter-command>source ~/.mutt/account.outlook<enter><change-folder>!<enter>'
+macro index,pager gx '<sync-mailbox><enter-command>source ~/.mutt/account.yandex<enter><change-folder>!<enter>'
 macro index,pager 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
-source '~/.mutt/solarized-d16.colors'
-
+# source '~/.mutt/light.colors'
+source '~/.mutt/light.colors'
 
 # GOOBOOK -------------    
 # If you want to use goobook from mutt.

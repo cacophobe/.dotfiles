@@ -1,10 +1,3 @@
-" remove vi compatiblity
-    set nocompatible
-" syntax highlighting
-    syntax on
-" filetype detection and settings
-    filetype plugin indent on
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'bling/vim-airline'
@@ -15,10 +8,16 @@ Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 
-" vim color schemes
-    "colorscheme lucius
-    "LuciusLight
-    "set background=dark
+" remove vi compatiblity
+    set nocompatible
+" syntax highlighting
+    syntax on
+" filetype detection and settings
+    filetype plugin indent on
+" change buffers without saving
+    set hidden
+" easier escape
+    inoremap jj <esc>
 " let the backspace key work 'normally'
     set backspace=indent,eol,start
 " wrap lines
@@ -30,7 +29,7 @@ call plug#end()
 " highlight matches
     set hlsearch
 " number of columns per TAB
-    "set tabstop=4
+    set tabstop=4
 " number of columns per TAB in insert mode
     set softtabstop=4
 " number of columns in reindent operations
@@ -46,8 +45,14 @@ call plug#end()
 " reduce delay in escape keys
     "set noesckeys
     set timeoutlen=1000 
-    set ttimeoutlen=0
-
+    set ttimeoutlen=1
+" --------------------------------
+"  COSMETIC
+" --------------------------------
+" vim color schemes
+    "colorscheme lucius
+    "LuciusLight
+    "set background=dark
 " plugin: vim-airline config
 " -------------------------------
 " workaround - vim-airline doesn't appear until I create a new split
