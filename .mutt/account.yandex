@@ -1,0 +1,23 @@
+set my_user="`security find-generic-password -wa mutt-yand-user`"
+set my_pass="`security find-generic-password -wa mutt-yand-pass`"
+
+set imap_user=$my_user
+set imap_pass=$my_pass
+set folder="imaps://$my_user:$my_pass@imap.yandex.com:993"
+set spoolfile=+INBOX
+set postponed=+Черновики
+set record=+Отправленные
+# set trash=+Удаленные
+
+set smtp_url="smtps://$my_user:$my_pass@smtp.yandex.com:465"
+set realname="palLABS"
+set from=$my_user
+set hostname="yandex.com"
+# set signature="palLABS"
+
+# set imap_authenticators="login"
+# set ssl_force_tls=yes
+# unset ssl_starttls
+
+account-hook $folder "set imap_user=$my_user imap_pass=$my_pass"
+account-hook $folder 'macro index,pager d "<save-message>+Trash<enter><enter>"'
