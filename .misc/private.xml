@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+	<item><name>myCustomKeys</name>
+		<item>
+			<name>Shift_R to Control_L</name>
+			<appendix>(+ When you press Shift_R only, send Delete)</appendix>
+			<identifier>private.remap.shiftR2controlL_delete</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::CONTROL_L, KeyCode::DELETE</autogen>
+		</item>
+		<item>
+			<name>Shift_R to Shift_R</name>
+			<appendix>(+ When you press Shift_R only, send Delete)</appendix>
+			<identifier>private.remap.shiftR2shiftR_delete</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::SHIFT_R, KeyCode::DELETE</autogen>
+		</item>
+		<item>
+			<name>Shift_R to Option_R</name>
+			<appendix>(+ When you press Shift_R only, send Delete)</appendix>
+			<identifier>private.remap.shiftR2optionR_delete</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_R, KeyCode::OPTION_R, KeyCode::DELETE</autogen>
+		</item>
+		<item>
+			<name>Shift_L to Option_L</name>
+			<appendix>(+ When you press Shift_L only, send Forward_Delete)</appendix>
+			<identifier>private.remap.shiftL2optionL_forwdelete</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_L, KeyCode::OPTION_L, KeyCode::FORWARD_DELETE</autogen>
+		</item>
+		<item>
+			<name>Shift_L to Shift_L</name>
+			<appendix>(+ When you press Shift_L only, send Forward_Delete)</appendix>
+			<identifier>private.remap.shiftL2shiftL_forwdelete</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::SHIFT_L, KeyCode::SHIFT_L, KeyCode::FORWARD_DELETE</autogen>
+		</item>
+		<item>
+			<name>Command_L to Command_L</name>
+			<appendix>(+ When you press Command_L only, send OptionL_Left)</appendix>
+			<identifier>private.remap.commandL2commandL_beginword</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_L, KeyCode::COMMAND_L, KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L</autogen>
+		</item>
+		<item>
+			<name>Command_R to Command_R</name>
+			<appendix>(+ When you press Command_R only, send OptionR_Right)</appendix>
+			<identifier>private.remap.commandR2commandR_endword</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::COMMAND_R, KeyCode::COMMAND_R, KeyCode::CURSOR_RIGHT, ModifierFlag::OPTION_R</autogen>
+		</item>
+		<item>
+			<name>Option_L to Option_L</name>
+			<appendix>(+ When you press Option_L only, send CommandL_Left)</appendix>
+			<identifier>private.remap.optionL2optionL_beginline</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::OPTION_L, KeyCode::OPTION_L, KeyCode::CURSOR_LEFT, ModifierFlag::COMMAND_L</autogen>
+		</item>
+		<item>
+			<name>Option_R to Option_R</name>
+			<appendix>(+ When you press Option_R only, send CommandR_Right)</appendix>
+			<identifier>private.remap.optionR2optionR_endline</identifier>
+			<autogen>__KeyOverlaidModifier__ KeyCode::OPTION_R, KeyCode::OPTION_R, KeyCode::CURSOR_RIGHT, ModifierFlag::COMMAND_R</autogen>
+		</item>
+	</item>
+</root>
