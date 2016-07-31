@@ -1,4 +1,4 @@
-text/html; w3m -v -I %{charset} -T text/html -dump; copiousoutput; needsterminal;
+#text/html; w3m -v -I %{charset} -T text/html -dump; copiousoutput; needsterminal;
 image/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
 audio/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;
 video/*; qlmanage -p 2>/dev/null %s; copiousoutput; needsterminal;

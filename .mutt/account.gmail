@@ -9,7 +9,7 @@ set postponed=+[Gmail]/Drafts
 unset record
 # set trash=+[Gmail]/Trash
 
-set smtp_url="smtps://$my_user:$my_pass@smtp.gmail.com:587"
+set smtp_url="smtps://$my_user:$my_pass@smtp.gmail.com:465"
 set realname="Pallab Chakraborty"
 set from=$my_user
 set hostname="gmail.com"
